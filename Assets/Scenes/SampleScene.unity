@@ -736,6 +736,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHeight: 12
   flapVelocity: 7
+  relativeVelocityX: 3
+  sprite: {fileID: 1524192717}
 --- !u!1001 &1125067302
 PrefabInstance:
   m_ObjectHideFlags: 0
