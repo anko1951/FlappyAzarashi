@@ -28,15 +28,16 @@ public class AzarashiController : MonoBehaviour
     void Update()
     {
         if(Input.GetButtonDown("Fire1") && transform.position.y < maxHeight){
-            flap();
+            Flap();
         }
 
         ApplyAngle();
         animator.SetBool("flap",angle >= 0.0f && !isDead);
     }
 
-    public void flap(){
+    public void Flap(){
         if(isDead) return;
+        if(rd2d.isKinematic) return;
         rd2d.velocity = new Vector2(0.0f,flapVelocity);
     }
 
@@ -56,6 +57,11 @@ public class AzarashiController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision) {
         if(isDead) return;
+        Camera.main.SendMessage("Clash");
         isDead = true;
+    }
+
+    public void SetSteerActive(bool active){
+        rd2d.isKinematic = !active;
     }
 }
