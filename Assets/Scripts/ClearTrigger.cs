@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class ClearTrigger : MonoBehaviour
 {
-    GameObject gameController;
+    GameController gameController;
     // Start is called before the first frame update
     void Start()
     {
-       gameController = GameObject.FindWithTag("GameController"); 
+       gameController = GameObject.FindObjectOfType<GameController>(); 
     }
 
     void OnTriggerExit2D(Collider2D other) {
-        gameController.SendMessage("IncreaseScore");    
+        gameController.IncreaseScore();
     }
 }
