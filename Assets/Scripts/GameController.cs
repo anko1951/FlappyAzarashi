@@ -45,7 +45,7 @@ public class GameController : MonoBehaviour
         state = State.Ready;
 
         azarashi.SetSteerActive(false);
-        blocks.SetActive(true);
+        blocks.SetActive(false);
 
         scoreText.text = $"Score: {0}";
 
